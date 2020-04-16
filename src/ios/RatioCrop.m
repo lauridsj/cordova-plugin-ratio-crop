@@ -59,9 +59,13 @@
          if(self.widthRatio > self.heightRatio) {
              croperWidth = width;
              croperHeight = width * self.heightRatio / self.widthRatio;
-         } else {
+         } else if(self.widthRatio < self.heightRatio) {
             croperWidth = height * self.widthRatio / self.heightRatio;
              croperHeight = height;
+         }
+         else {
+            croperWidth = MIN(width, height);
+            croperHeight = MIN(width, height);
          }
      }
      
